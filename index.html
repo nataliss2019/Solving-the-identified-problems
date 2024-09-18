@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Слайдер с использованием Swiper Алексеенко Валерия</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .swiper {
+        position: relative;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+        border: 2px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        padding: 35px;
+        border-radius: 10px;
+      }
+
+      .swiper-wrapper {
+        width: 100%;
+        height: 400px; /* устанавливаем фиксированную высоту */
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* сохраняем пропорции изображений */
+        border-radius: 10px;
+      }
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+      }
+
+      #imageCounter {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #007bff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/image1.jpg" alt="Image 1" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/image2.jpg" alt="Image 2" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/image3.jpg" alt="Image 3" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/image4.jpg" alt="Image 4" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/image5.jpg" alt="Image 5" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
